@@ -1,0 +1,104 @@
+/* Header elements */
+header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding: 20px 35px;
+    background: #293f50;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-weight: 300;
+    margin: 0;
+    color: #fff;
+    font-size: 44px;
+    line-height: 44px;
+}
+
+header a {
+    text-decoration: none;
+    color: #fff;
+}
+
+header nav {
+    margin: 7px 0;
+}
+
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+header nav ul li a {
+    padding: 10px 15px;
+    font-weight: medium;
+    font-size: 1.55vw;
+}
+
+header nav ul li a:hover {
+    background: rgb(146, 219, 219);
+    color: #024e76;
+    border-radius: 15px;
+    text-shadow: none;
+}
+
+header a {
+    text-decoration: none;
+    color: #fff;
+}
+
+header nav {
+    margin: 7px 0;
+}
+
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+}
+
+header nav ul li a {
+    padding: 10px 15px;
+    font-weight: medium;
+    font-size: 1.55vw;
+}
+
+header nav ul li a:hover {
+    background: darkseagreen;
+    color: white;
+    border-radius: 15px;
+    text-shadow: none;
+}
+/* Header elements end */
+
+/* Hero Style Start */
+.hero {
+    background-image: url("https://gallery.yopriceville.com/var/albums/Fantasy/Beautiful_Magic_Fantasy_Garden_Wallpaper.jpg?m=1399676400");
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    height: 200px;
+}
+
+.hero-introduction {
+    width: 70%;
+    text-align: right;
+    margin: 5%;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+/* HERO STYLE END */
