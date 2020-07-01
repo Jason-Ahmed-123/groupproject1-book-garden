@@ -81,15 +81,15 @@ header nav ul li a:hover {
 
 /* Hero Style Start */
 .hero {
-    background-image: url("https://gallery.yopriceville.com/var/albums/Fantasy/Beautiful_Magic_Fantasy_Garden_Wallpaper.jpg?m=1399676400");
+    /*background-image: url("https://gallery.yopriceville.com/var/albums/Fantasy/Beautiful_Magic_Fantasy_Garden_Wallpaper.jpg?m=1399676400");
     background-size: cover;
     background-position: top;
-    background-attachment: fixed;
+    background-attachment: fixed;*/
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     align-items: flex-start;
-    height: 200px;
+    height: 450px;
 }
 
 .hero-introduction {
@@ -102,6 +102,18 @@ header nav ul li a:hover {
 }
 
 /* HERO STYLE END */
+
+.bigpicture {
+    /*background-image: url("https://gallery.yopriceville.com/var/albums/Fantasy/Beautiful_Magic_Fantasy_Garden_Wallpaper.jpg?m=1399676400");*/
+    background-image: url("https://gallery.yopriceville.com/var/albums/Fantasy/Beautiful_Magic_Fantasy_Garden_Wallpaper.jpg?m=1399676400");
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+}
+
+main h2 {
+    color: yellow;
+}
 
 /* Footer */
 
