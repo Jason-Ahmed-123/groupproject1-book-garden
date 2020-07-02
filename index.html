@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Garden</title>
 
-    <!-- Link to Bootstrap
+    <!-- Link to Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    -->
     
     <!-- Link to stylesheet -->
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -28,28 +27,65 @@
                 <a href="#contact">Contact</a>
             </li>
             <li>
-                <a href="#news">News</a>
+                <a href="#news">Search</a>
             </li>
             <li>
-                <a href="#search">Search</a>
+                <a href="#search">Login</a>
             </li>
         </ul>
     </nav>
 </header>
 
-<!-- hero -->
-<div class="bigpicture">
-
-<section class="hero">
-    <div class="hero-introduction">
-        <h2>(fill in blurb - feel free to change) Welcome to your very own book garden, a place where all lovers of books can kick-back, commune, 
-            and connect! Come on in, open up a book - old, new, from the most obscure out-of-prints to the newest bestseller! - and escape the outside world with us!</h2>
-    </div>
-</section>
-
 <!-- Main body of webpage -->
-<main>
-    <h2>Sean, below the above "hero" section image, this would be the main frame, where the search forms and images could go. What are your thoughts?</h2>
+<main class="bigimage">
+
+    
+
+    <!-- Bootstrap container and nested forms -->
+    <div class="container">
+        <span class="border border-primary"> <!-- this span is to add borders to the grid -->
+        <div class="row">
+          <div class="col-sm">
+            (One of two columns)
+
+            <h4>Search books by title, author, or genre:</h4>
+
+            <div>
+                <form>
+                    <div class="form-row">
+                      <div class="col">
+                        <input type="text" class="form-control" placeholder="Name">
+                      </div>
+                      <div class="col">
+                        <input type="text" class="form-control" placeholder="Title">
+                      </div>
+                      <div class="col">
+                        <input type="text" class="form-control" placeholder="Genre">
+                      </div>
+                    </div>
+                  </form>
+            </div>
+
+          </div>
+          <div class="col-sm">
+            (Two of two columns)
+
+            <h4>Your recommendations:</h4>
+
+            <div class="card">
+                <div class="card-body">
+                  Book results will go here, in this Bootstrap card
+                </div>
+              </div>
+
+          </div>  
+        </div>
+        </span>
+      </div>
+
+    
+
+    <h2>Sean, this would be the main frame, where the search forms and images could go.</h2>
 
 </main>
 
@@ -57,11 +93,16 @@
 
 <!-- Footer panel -->
 <footer>
-    <h3>&copy;2020 - Sean Sanneman & Jason Ahmed (footer panel - to go at bottom of the webpage)</h3>
+    <h4>&copy;2020 - Sanneman, Euge, Altamirano, Ahmed</h4>
 </footer>
 
 <!-- Link to JavaScript -->
 <script src=""></script>
+
+<!-- Bootstrap JS links -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
 </body>
 

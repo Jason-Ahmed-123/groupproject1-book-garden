@@ -79,31 +79,18 @@ header nav ul li a:hover {
 }
 /* Header elements end */
 
-/* Hero Style Start */
-.hero {
-    /*background-image: url("https://gallery.yopriceville.com/var/albums/Fantasy/Beautiful_Magic_Fantasy_Garden_Wallpaper.jpg?m=1399676400");
-    background-size: cover;
-    background-position: top;
-    background-attachment: fixed;*/
+/* Main Section Style Start */
+main {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     align-items: flex-start;
-    height: 400px;
+    height: 560px;
 }
 
-.hero-introduction {
-    width: 70%;
-    text-align: right;
-    margin: 5%;
-    color: yellow;
-    font-size: 16px;
-    line-height: 1.2;
-}
 
-/* HERO STYLE END */
 
-.bigpicture {
+.bigimage {
     /*background-image: url("https://gallery.yopriceville.com/var/albums/Fantasy/Beautiful_Magic_Fantasy_Garden_Wallpaper.jpg?m=1399676400");*/
     background-image: url("https://gallery.yopriceville.com/var/albums/Fantasy/Beautiful_Magic_Fantasy_Garden_Wallpaper.jpg?m=1399676400");
     background-size: cover;
@@ -111,16 +98,39 @@ header nav ul li a:hover {
     background-attachment: fixed;
 }
 
+main h4 {
+    color: white;
+}
+
 main h2 {
     color: yellow;
 }
+
+.container {
+    /*padding: top=100px;
+    background-color: lightgreen;
+    opacity: 75%;*/
+}
+
+.border-primary {
+    border-color: greenyellow;
+}
+
+.col-sm {
+    color: yellow;
+}
+
+.card-body {
+    color: grey;
+}
+/* Main Section style ends */
 
 /* Footer */
 
 footer {
     background: #293f50;
     color: white;
-    width: 95%;
+    width: 100%;
     padding: 20px 35px;
     display: flex;
     justify-content: space-between;
