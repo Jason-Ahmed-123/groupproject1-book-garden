@@ -88,8 +88,6 @@ main {
     height: 560px;
 }
 
-
-
 .bigimage {
     /*background-image: url("https://gallery.yopriceville.com/var/albums/Fantasy/Beautiful_Magic_Fantasy_Garden_Wallpaper.jpg?m=1399676400");*/
     background-image: url("https://gallery.yopriceville.com/var/albums/Fantasy/Beautiful_Magic_Fantasy_Garden_Wallpaper.jpg?m=1399676400");
@@ -103,6 +101,10 @@ main h4 {
 }
 
 main h2 {
+    color: yellow;
+}
+
+.blurb {
     color: yellow;
 }
 
