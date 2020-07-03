@@ -14,7 +14,8 @@ var openLibraryApiUrl = function(user) {
         // request was successful
         if (response.ok) {
           response.json().then(function(data) {
-            displayRepos(data, user);
+            displayAuthor(data, author);
+              console.log(openLibraryApiUrl)
           });
         } else {
           alert("Error: " + response.statusText);
@@ -28,6 +29,7 @@ var openLibraryApiUrl = function(user) {
 
 //create form variable for form submot handler//
 
+/*
 var formSubmitHandler = function(event) {
     event.preventDefault();
     // var for form submit (replace username)//
