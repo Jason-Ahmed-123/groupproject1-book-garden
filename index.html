@@ -37,55 +37,79 @@
 </header>
 
 <!-- Main body of webpage -->
-<main class="bigimage">
-
-    
+<main class="bigimage mainText">
 
     <!-- Bootstrap container and nested forms -->
     <div class="container">
         <span class="border border-primary"> <!-- this span is to add borders to the grid -->
         <div class="row">
-          <div class="col-sm">
-            (One of two columns)
+          <div class="col-md bookDetails">
+            (One of three columns)
 
             <h4>Search books by title, author, or genre:</h4>
 
             <div>
-                <form>
-                    <div class="form-row">
-                      <div class="col">
-                        <input type="text" class="form-control" placeholder="Name">
-                      </div>
-                      <div class="col">
-                        <input type="text" class="form-control" placeholder="Title">
-                      </div>
-                      <div class="col">
-                        <input type="text" class="form-control" placeholder="Genre">
-                      </div>
-                    </div>
                   </form>
+
+                  <form>
+                    <div class="form-group">
+                      <label for="AuthorInput">Author:</label>
+                      <input type="text" class="form-control" id="AuthorInput" placeholder="Author name">
+                    </div>
+                    <div class="form-group">
+                      <label for="TitleInput">Book title:</label>
+                      <input type="text" class="form-control" id="TitleInput" placeholder="Book title">
+                    </div>
+                    <div class="form-group">
+                        <label for="GenreInput">Genre:</label>
+                        <input type="text" class="form-control" id="GenreInput" placeholder="Genre, fiction, non-fiction, etc.">
+                      </div>
+                      
+                    <form>
+                    <label for="PublishingDate">Publishing dates range:</label>
+                        <div class="form-row">
+                          <div class="col">
+                            <input type="text" class="form-control" placeholder="From:">
+                          </div>
+                          <div class="col">
+                            <input type="text" class="form-control" placeholder="To:">
+                          </div>
+                        </div>
+                    </form>
+                      
+                  </form>
+                  <br>
+                  <div>
+                    <button type="button" class="btn btn-warning">Search</button>
+                  </div>
+
             </div>
 
           </div>
-          <div class="col-sm">
-            (Two of two columns)
+          <div class="col-md bookDetails">
+            (Two of three columns)
 
-            <h4>Your recommendations:</h4>
+            <h4 class="blurb">The Book Garden awaits at the edge of imagination. Plant seeds of inspiration, and watch your 
+              Book Garden grow. Stay a while, and walk the pathways of your mind.
+            </h4>
+
+          </div>
+          <div class="col-md bookDetails">
+              (Three of three columns)
+
+              <h4>Your recommendations:</h4>
 
             <div class="card">
                 <div class="card-body">
                   Book results will go here, in this Bootstrap card
                 </div>
-              </div>
+            </div>
+        </div>
+          
 
-          </div>  
         </div>
         </span>
       </div>
-
-    
-
-    <h2>Sean, this would be the main frame, where the search forms and images could go.</h2>
 
 </main>
 
@@ -93,17 +117,18 @@
 
 <!-- Footer panel -->
 <footer>
-    <h4>&copy;2020 - Sanneman, Euge, Altamirano, Ahmed</h4>
+    <h5>&copy;2020 - Sanneman, Euge, Altamirano, Ahmed</h5>
 </footer>
 
 <!-- Link to JavaScript -->
-<script src=""></script>
+<!-- Script is loading before jQuery has a chance to load and thus jQuery functions are undefined -->
+
 
 <!-- Bootstrap JS links -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
+<script src="./assets/js/script.js"></script>
 </body>
 
 </html>
