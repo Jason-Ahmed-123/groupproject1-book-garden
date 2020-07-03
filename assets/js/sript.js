@@ -29,7 +29,7 @@ var openLibraryApiUrl = function(user) {
 
 //create form variable for form submot handler//
 
-/*
+
 var formSubmitHandler = function(event) {
     event.preventDefault();
     // var for form submit (replace username)//
@@ -75,51 +75,3 @@ var buttonClickHandler = function(event) {
       };
       
 languageButtonsEl.addEventListener("click", buttonClickHandler);
-
-//curl http://openlibrary.org/authors/OL1A.json
-//{
-  //  "name": "Sachi Rautroy",
-    //...
-//}
-//$ curl -s -H 'Accept: application/json' https://openlibrary.org/books/OL1M
-//{
-  //  "name": "Sachi Rautroy",
-    //...
-//}
-
-/*
-curl 'http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A'
-[
-    {
-        "key": "/books/OL1M"
-    },
-    {
-        "key": "/books/OL4731M"
-    },
-    ...
-]
-$ curl -H 'Accept: application/json' 'https://openlibrary.org/query?type=/type/edition&authors=/authors/OL1A'
-[
-    {
-        "key": "/books/OL1M"
-    },
-    {
-        "key": "/books/OL4731M"
-    },
-    ...
-]
-$ curl 'http://openlibrary.org/query.json?type=/type/edition&works=/works/OL2040129W'
-[
-    {
-        "key": "/books/OL9770407M"
-    },
-    {
-        "key": "/books/OL21857767M"
-    },
-    ...
-]
-ADD RESULTS TO div class"card-body"
-
-/*
-
-
