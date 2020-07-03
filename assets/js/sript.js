@@ -118,6 +118,7 @@ $ curl 'http://openlibrary.org/query.json?type=/type/edition&works=/works/OL2040
     },
     ...
 ]
+ADD RESULTS TO div class"card-body"
 
 /*
 
