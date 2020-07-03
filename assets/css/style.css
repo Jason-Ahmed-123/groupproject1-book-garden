@@ -1,30 +1,30 @@
 /* Header elements */
 header {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    padding: 20px 35px;
-    background: #293f50;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  padding: 20px 35px;
+  background: #293f50;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 header h1 {
-    font-weight: 300;
-    margin: top = 10px;
-    color: #fff;
-    font-size: 44px;
-    line-height: 44px;
+  font-weight: 300;
+  margin: top = 10px;
+  color: #fff;
+  font-size: 44px;
+  line-height: 44px;
 }
 
 header a {
-    text-decoration: none;
-    color: #fff;
+  text-decoration: none;
+  color: #fff;
 }
 
 header nav {
-    margin: 7px 0;
+  margin: 7px 0;
 }
 
 header nav ul {
@@ -36,25 +36,25 @@ header nav ul {
 }
 
 header nav ul li a {
-    padding: 15px 15px;
-    font-weight: medium;
-    font-size: 1.55vw;
+  padding: 15px 15px;
+  font-weight: medium;
+  font-size: 1.55vw;
 }
 
 header nav ul li a:hover {
-    background: rgb(146, 219, 219);
-    color: #024e76;
-    border-radius: 15px;
-    text-shadow: none;
+  background: rgb(146, 219, 219);
+  color: #024e76;
+  border-radius: 15px;
+  text-shadow: none;
 }
 
 header a {
-    text-decoration: none;
-    color: #fff;
+  text-decoration: none;
+  color: #fff;
 }
 
 header nav {
-    margin: 7px 0;
+  margin: 7px 0;
 }
 
 header nav ul {
@@ -66,64 +66,78 @@ header nav ul {
 }
 
 header nav ul li a {
-    padding: 10px 15px;
-    font-weight: medium;
-    font-size: 1.55vw;
+  padding: 10px 15px;
+  font-weight: medium;
+  font-size: 1.55vw;
 }
 
 header nav ul li a:hover {
-    background: darkseagreen;
-    color: white;
-    border-radius: 15px;
-    text-shadow: none;
+  background: darkseagreen;
+  color: white;
+  border-radius: 15px;
+  text-shadow: none;
 }
 /* Header elements end */
 
 /* Main Section Style Start */
 main {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    height: 560px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  height: 560px;
 }
 
 main {
-    color: yellow;
+  color: yellow;
 }
 
 .bigimage {
-    /*background-image: url("https://gallery.yopriceville.com/var/albums/Fantasy/Beautiful_Magic_Fantasy_Garden_Wallpaper.jpg?m=1399676400");*/
-    background-image: url("https://gallery.yopriceville.com/var/albums/Fantasy/Beautiful_Magic_Fantasy_Garden_Wallpaper.jpg?m=1399676400");
-    background-size: cover;
-    background-position: bottom;
-    background-attachment: fixed;
+  /*background-image: url("https://gallery.yopriceville.com/var/albums/Fantasy/Beautiful_Magic_Fantasy_Garden_Wallpaper.jpg?m=1399676400");*/
+  background-image: url("https://gallery.yopriceville.com/var/albums/Fantasy/Beautiful_Magic_Fantasy_Garden_Wallpaper.jpg?m=1399676400");
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
 }
 
 /* Need to have visible, but transparent, rounded-corners columns. Still to be done. */
 .container {
-    padding: ;
 }
 
 .bookDetails {
-    border-width: 10px;
-    border-color: yellow;
-    background-color: ;
+  border-width: 10px;
+  border-color: yellow;
+  background-color: ;
+}
+
+.bookResults {
+  border-width: 10px;
+  border-color: yellow;
+  background-color: ;
+  grid-column-start: 10;
+}
+
+.welcome {
+  text-align: center;
+  color: black;
+  border-width: 10px;
+  border-color: yellow;
+  background-color: ;
 }
 
 .card-body {
-    color: grey;
+  color: grey;
 }
 /* Main Section style ends */
 
 /* Footer */
 
 footer {
-    background: #293f50;
-    color: white;
-    width: 100%;
-    padding: 20px 35px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  background: #293f50;
+  color: white;
+  width: 100%;
+  padding: 20px 35px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
