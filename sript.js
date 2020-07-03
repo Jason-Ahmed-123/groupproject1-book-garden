@@ -1,13 +1,15 @@
 //OPEN LIBRARY API//
-
+var authorInput = document.querySelector("AuthorInput");
+var titleInput = document.querySelector("TitleInput");
+var genreInput = document.querySelecetor("GenreInput");
 var repoSearchTerm = document.querySelector("#repo-search-term");
 
-var getUserRepos = function(user) {
+var openLibraryApiUrl = function(user) {
     // format the github api url
-    var apiUrl = "openlibrary/plugins/openlibrary/js" + user + "/search";
+    var openLibraryApiUrl = "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A" + authorInput + "/search";
 
     // make a request to the url
-    fetch(apiUrl)
+    fetch(openLibraryApiUrl)
       .then(function(response) {
         // request was successful
         if (response.ok) {
@@ -20,7 +22,7 @@ var getUserRepos = function(user) {
       })
       .catch(function(error) {
         // Notice this `.catch()` getting chained onto the end of the `.then()` method
-        alert("Unable to find title/author/genre");
+        alert("Unable to find author");
       });
     };
 
