@@ -88,7 +88,9 @@ main {
     height: 560px;
 }
 
-
+main {
+    color: yellow;
+}
 
 .bigimage {
     /*background-image: url("https://gallery.yopriceville.com/var/albums/Fantasy/Beautiful_Magic_Fantasy_Garden_Wallpaper.jpg?m=1399676400");*/
@@ -98,26 +100,15 @@ main {
     background-attachment: fixed;
 }
 
-main h4 {
-    color: white;
-}
-
-main h2 {
-    color: yellow;
-}
-
+/* Need to have visible, but transparent, rounded-corners columns. Still to be done. */
 .container {
-    /*padding: top=100px;
-    background-color: lightgreen;
-    opacity: 75%;*/
+    padding: ;
 }
 
-.border-primary {
-    border-color: greenyellow;
-}
-
-.col-sm {
-    color: yellow;
+.bookDetails {
+    border-width: 10px;
+    border-color: yellow;
+    background-color: ;
 }
 
 .card-body {
