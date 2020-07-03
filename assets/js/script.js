@@ -2,12 +2,16 @@
 
 // GoogleBooks Api Work
 
-//var author = document.querySelector("");
-//var title = document.querySelector("");
-//var genre = document.querySelector("");
+var authorInput = document.querySelector("#AuthorInput");
+var titleInput = document.querySelector("#TitleInput");
+var genreInput = document.querySelector("#GenreInput");
+
+
 
 // -------Function to fetch Book Information Start-------
-var getBooks = function() {
+
+
+//var getBooks = function(response) {
 
 // Variable for GoogleBooks API
 var googleApiUrl = "https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=AIzaSyD2rj-uQGtYypreqRXJvRLLVg2sCgjhE2s"
@@ -18,7 +22,7 @@ fetch(googleApiUrl)
     if(response.ok) {
         response.json().then(function(){
             displayBook();
-            console.log()
+            console.log(googleApiUrl)
         });
     } else {
         alert("Error: ");
@@ -28,12 +32,21 @@ fetch(googleApiUrl)
     alert("Unable to connect")
 })
 
-    console.log(googleApiUrl);
-};
+    //console.log(googleApiUrl);
 
+
+//$(document).on("click", "#btn_btn-warning", function(event){
+    //alert("GO");
+//});
+//};
+//for (var i=0; i<.length;i=0)
+//});
 // -------Function to fetch Book Information End-------
+
+
 
 console.log()
 
+//bookDetails.appendChild(bookImage)
 
-var 
+//getBooks()
