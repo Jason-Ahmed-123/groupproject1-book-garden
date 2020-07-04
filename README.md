@@ -14,4 +14,4 @@ A website that allows users to search for books based on various preferences.
 https://jason-ahmed-123.github.io/groupproject1-book-garden/
 
 ## Contribution
-Made by Jason Ahmed & Sean Sanneman
+Made by Sean Sanneman, Lauren Euge, Victor Angel Paniagua Altamirano & Jason Ahmed
