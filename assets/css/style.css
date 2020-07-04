@@ -1,9 +1,10 @@
 /* Header elements */
 header {
+  z-index: 99;
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  padding: 20px 35px;
+  padding: 8px 35px;
   background: #293f50;
   display: flex;
   justify-content: space-between;
@@ -14,7 +15,7 @@ header h1 {
   font-weight: 300;
   margin: top = 10px;
   color: #fff;
-  font-size: 44px;
+  font-size: 35px;
   line-height: 44px;
 }
 
@@ -81,15 +82,16 @@ header nav ul li a:hover {
 
 /* Main Section Style Start */
 main {
+  padding: 12px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-items: flex-start;
-  height: 560px;
+  height: auto;
 }
 
 main {
-  color: gold;
+  color: white;
 }
 
 .bigimage {
@@ -105,35 +107,67 @@ main {
 }
 
 .bookDetails {
+  padding: 12px 36px 12px 36px;
+  background-color: rgba(4, 161, 70, 0.2);
   border-width: 1px;
-  border-color: gold;
-  border: solid;
+  border-color: ;
+  border: ;
+  box-shadow: 2px 2px 12px 8px rgba(0, 0, 0, 0.6);
   border-radius: 25px;
   background-color: ;
 }
 
+.flexbox-button {
+  display: flex;
+  margin-bottom: 12px;
+  justify-content: center;
+}
+
+.search {
+  padding-left: 24px;
+  padding-right: 24px;
+  border: none;
+  color: white;
+  font-weight: 500;
+  background-color: #8268d2;
+  border-width: 2px;
+  border-radius: 15px;
+}
+
+.search:hover {
+  background-color: #9c82ea;
+  color: white;
+}
+
 .bookResults {
+  padding: 12px 36px 12px 36px;
+  background-color: rgba(4, 161, 70, 0.2);
   border-width: 1px;
-  border-color: gold;
-  border: solid;
+  border: ;
   border-radius: 25px;
-  background-color: ;
+  box-shadow: 2px 2px 12px 8px rgba(0, 0, 0, 0.6);
   grid-column-start: 10;
 }
 
 .welcome {
+  padding-right: 48px;
+  padding-left: 48px;
   text-align: center;
   color: black;
   border-width: 10px;
-  border-color: yellow;
+  border-color: gold;
   background-color: ;
 }
 
 .card-body {
-  color: grey;
+  color: gray;
   border-width: 1px;
-  border: solid;
-  border-color: gold;
+  border-radius: 15px;
+}
+
+.card {
+  margin: 0;
+  border-radius: 15px;
 }
 /* Main Section style ends */
 
@@ -151,7 +185,7 @@ footer {
 
 .form-control {
   border-width: 1px;
-  border: solid;
-  border-color: gold;
+  border: ;
+  border-color: white;
   border-radius: 15px;
 }
