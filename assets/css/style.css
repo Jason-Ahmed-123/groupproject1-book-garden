@@ -89,7 +89,7 @@ main {
 }
 
 main {
-  color: yellow;
+  color: gold;
 }
 
 .bigimage {
@@ -102,17 +102,19 @@ main {
 
 /* Need to have visible, but transparent, rounded-corners columns. Still to be done. */
 .container {
+  border-color: gold;
+  border-width: 10px;
 }
 
 .bookDetails {
   border-width: 10px;
-  border-color: yellow;
+  border-color: gold;
   background-color: ;
 }
 
 .bookResults {
   border-width: 10px;
-  border-color: yellow;
+  border-color: gold;
   background-color: ;
   grid-column-start: 10;
 }
