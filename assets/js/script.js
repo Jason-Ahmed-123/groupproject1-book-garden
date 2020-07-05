@@ -14,7 +14,7 @@ var genreInput = document.querySelector("#GenreInput");
 //var getBooks = function(response) {
 
 // Variable for GoogleBooks API
-var googleApiUrl = "https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=AIzaSyD2rj-uQGtYypreqRXJvRLLVg2sCgjhE2s"
+var googleApiUrl = "https://www.googleapis.com/books/v1/volumes?q="+ authorInput +"&inauthor&key=AIzaSyCRSXdaLKLF0hPkiN03bDL9-swkrelDh8w&country=US"
 
 // Fetching GoogleBooks API
 fetch(googleApiUrl)
@@ -32,11 +32,11 @@ fetch(googleApiUrl)
     alert("Unable to connect")
 })
 
-    //console.log(googleApiUrl);
+    console.log(googleApiUrl);
 
 
-//$(document).on("click", "#btn_btn-warning", function(event){
-    //alert("GO");
+$(document).on("click", "#btn_btn-warning", function(event){
+    alert("GO");
 //});
 //};
 //for (var i=0; i<.length;i=0)
