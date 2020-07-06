@@ -2,51 +2,72 @@
 
 // GoogleBooks Api Work
 
-var authorInput = document.querySelector("#AuthorInput");
-var titleInput = document.querySelector("#TitleInput");
-var genreInput = document.querySelector("#GenreInput");
+var displayBooks = document.querySelector("#cardContainment")
+var titleInput = document.querySelector("TitleInput")
 
+// ------- Function to fetch Book Information Start ------- (1)
 
-
-// -------Function to fetch Book Information Start-------
-
-
-//var getBooks = function(response) {
+var getBookInfo = function(titleInput) {
 
 // Variable for GoogleBooks API
-var googleApiUrl = "https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=AIzaSyD2rj-uQGtYypreqRXJvRLLVg2sCgjhE2s"
+var googleApiUrl = "https://www.googleapis.com/books/v1/volumes?q=" + titleInput + "&key=AIzaSyCRSXdaLKLF0hPkiN03bDL9-swkrelDh8w"
 
-// Fetching GoogleBooks API
+// ------- Fetching GoogleBooks API Start ------- (2)
 fetch(googleApiUrl)
-.then(function() {
+.then(function(response) {
     if(response.ok) {
         response.json().then(function(){
-            displayBook();
+            displayBooks(books, titleInput);
             console.log(googleApiUrl)
         });
     } else {
         alert("Error: ");
     }
 })
-.catch(function(error) { 
-    alert("Unable to connect")
-})
+    console.log(googleApiUrl);
+};
+// ------- Fetching GoogleBooks API End ------- (2)
 
-    //console.log(googleApiUrl);
+// ------- Function to fetch Book Information End ------- (1)
+
+// ------- Form button function start ------- (3)
+
+console.log(titleInput);
+
+var titleInput = document.querySelector("#booksCrit")
+
+console.log(formSubmitHandler)
+
+titleInput = addEventListener("submit", formSubmitHandler)
+
+function formSubmitHandler (event) {
+    event.preventDefault();
+
+    if (titleInput.value) {
+        getBookInfo(titleInput.value);
+        titleInput.value="";
+    } else {
+        alert("Please enter a book title");
+    }
+    console.log(event)
+}
 
 
-//$(document).on("click", "#btn_btn-warning", function(event){
-    //alert("GO");
-//});
-//};
-//for (var i=0; i<.length;i=0)
-//});
-// -------Function to fetch Book Information End-------
+// ------- Form button function end ------- (3)
 
+// ------- Display information in container start ------- (4)
 
+var bookDescription = function(books, titleInput) {
+    if(titleInput.length ===0) {
+        cardContainment.textContent = "No books found";
+        return;
+}
+};
 
-console.log()
+for (var i=0; i<data.list.length;i=0) {
+    var bookList = data.list[i];
 
-//bookDetails.appendChild(bookImage)
+    bookContainer.appendChild(displayBooks);
+}
 
-//getBooks()
+// ------- Display information in container end ------- (4)

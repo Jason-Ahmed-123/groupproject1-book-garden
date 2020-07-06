@@ -49,9 +49,7 @@
             <h4>Search books by title, author, or genre:</h4>
 
             <div>
-                  </form>
-
-                  <form>
+                  <form id="booksCrit">
                     <div class="form-group">
                       <label for="AuthorInput">Author:</label>
                       <input type="text" class="form-control" id="AuthorInput" placeholder="Author name">
@@ -77,11 +75,13 @@
                         </div>
                     </form>
                       
+                    <div class="flexbox-button">
+                      <button type="submit" class="btn btn-warning search">Search</button>
+                    </div>
+
                   </form>
                   <br>
-                  <div class="flexbox-button">
-                    <button type="button" class="btn btn-warning search">Search</button>
-                  </div>
+
 
             </div>
 
@@ -101,8 +101,8 @@
               <h4>You Might Like:</h4>
 
             <div class="card">
-                <div class="card-body">
-                  Book results will go here, in this Bootstrap card
+                <div id= cardContainment class="card-body">
+                  
                 </div>
             </div>
         </div>
@@ -122,7 +122,6 @@
 </footer>
 
 <!-- Link to JavaScript -->
-<!-- Script is loading before jQuery has a chance to load and thus jQuery functions are undefined -->
 
 
 <!-- Bootstrap JS links -->
