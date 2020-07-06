@@ -3,18 +3,14 @@
 // GoogleBooks Api Work
 
 var displayBooks = document.querySelector("#cardContainment")
-var titleInput = document.querySelector("TitleInput")
+var titleInput = document.querySelector("#TitleInput")
 
 // ------- Function to fetch Book Information Start ------- (1)
 
 var getBookInfo = function(titleInput) {
 
 // Variable for GoogleBooks API
-<<<<<<< HEAD
-var googleApiUrl = "https://www.googleapis.com/books/v1/volumes?q="+ authorInput +"&inauthor&key=AIzaSyCRSXdaLKLF0hPkiN03bDL9-swkrelDh8w&country=US"
-=======
-var googleApiUrl = "https://www.googleapis.com/books/v1/volumes?q=" + titleInput + "&key=AIzaSyCRSXdaLKLF0hPkiN03bDL9-swkrelDh8w"
->>>>>>> feature/apidevelop
+var googleApiUrl = "https://www.googleapis.com/books/v1/volumes?q=Frankenstein+inauthor:keyes&key=AIzaSyCRSXdaLKLF0hPkiN03bDL9-swkrelDh8w"
 
 // ------- Fetching GoogleBooks API Start ------- (2)
 fetch(googleApiUrl)
@@ -25,7 +21,7 @@ fetch(googleApiUrl)
             console.log(googleApiUrl)
         });
     } else {
-        alert("Error: ");
+        alert("Error: "); 
     }
 })
     console.log(googleApiUrl);
@@ -36,41 +32,8 @@ fetch(googleApiUrl)
 
 // ------- Form button function start ------- (3)
 
-console.log(titleInput);
 
-<<<<<<< HEAD
-    console.log(googleApiUrl);
-
-
-$(document).on("click", "#btn_btn-warning", function(event){
-    alert("GO");
-//});
-//};
-//for (var i=0; i<.length;i=0)
-//});
 // -------Function to fetch Book Information End-------
-=======
-var titleInput = document.querySelector("#booksCrit")
-
-console.log(formSubmitHandler)
-
-titleInput = addEventListener("submit", formSubmitHandler)
-
-function formSubmitHandler (event) {
-    event.preventDefault();
-
-    if (titleInput.value) {
-        getBookInfo(titleInput.value);
-        titleInput.value="";
-    } else {
-        alert("Please enter a book title");
-    }
-    console.log(event)
-}
-
-
-// ------- Form button function end ------- (3)
->>>>>>> feature/apidevelop
 
 // ------- Display information in container start ------- (4)
 
