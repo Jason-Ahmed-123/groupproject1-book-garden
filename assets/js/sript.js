@@ -1,4 +1,5 @@
 //OPEN LIBRARY API//
+
 var authorInput = document.querySelector("AuthorInput");
 var titleInput = document.querySelector("TitleInput");
 var genreInput = document.querySelecetor("GenreInput");
@@ -13,8 +14,10 @@ var openLibraryApiUrl = function(user) {
       .then(function(response) {
         // request was successful
         if (response.ok) {
+
           response.json().then(function(data) {
             displayAuthor(data, author);
+
               console.log(openLibraryApiUrl)
           });
         } else {
@@ -25,14 +28,17 @@ var openLibraryApiUrl = function(user) {
         // Notice this `.catch()` getting chained onto the end of the `.then()` method
         alert("Unable to find author");
       });
+
     };
 
 //create form variable for form submot handler//
 
 
+
 var formSubmitHandler = function(event) {
     event.preventDefault();
     // var for form submit (replace username)//
+
     var username = nameInputEl.value.trim();
       
     if (username) {
@@ -40,21 +46,26 @@ var formSubmitHandler = function(event) {
         nameInputEl.value = "";
     } else {
     alert("Please enter title/author/genre");
+
     }
         console.log(event);
     }; 
 
     //add event listener for form submit//
 
+
     //add append child?//
 
 var getFeaturedRepos = function(language) {
     var apiUrl = "openlibrary/plugins/openlibrary/js?q=" + language + "+is:featured&sort=help-wanted-issues";
+
       
         fetch(apiUrl).then(function(response) {
           if (response.ok) {
             response.json().then(function(data) {
+
               displayRepos(data.items, language);
+
             });
           } else {
             alert("Error: " + response.statusText);
@@ -72,6 +83,7 @@ var buttonClickHandler = function(event) {
           repoContainerEl.textContent = "";
         }
         console.log(language);
+
       };
       
 languageButtonsEl.addEventListener("click", buttonClickHandler);
