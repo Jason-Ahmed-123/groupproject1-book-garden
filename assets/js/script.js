@@ -47,7 +47,7 @@ fetch(googleApiUrl)
            //newbooks[Matth.floor(Math.random * newbooks.length)]
         });
     } else {
-        alert("Error: ");
+        alert("Error: "); 
     }
 })
 
