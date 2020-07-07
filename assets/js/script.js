@@ -24,7 +24,7 @@ var bookImg;
 // Variable for GoogleBooks API
 var googleApiUrl = "https://www.googleapis.com/books/v1/volumes?q=" + titleResponse + "&key=AIzaSyCRSXdaLKLF0hPkiN03bDL9-swkrelDh8w"
 
-// Fetching GoogleBooks API
+// ------- Fetching GoogleBooks API Start ------- (2)
 fetch(googleApiUrl)
 .then(function(response) {
     if(response.ok) {
@@ -89,8 +89,10 @@ function formSubmitHandler (event) {
     console.log(event)
 }
 
-console.log()
+for (var i=0; i<data.list.length;i=0) {
+    var bookList = data.list[i];
 
-//bookDetails.appendChild(bookImage)
+    bookContainer.appendChild(displayBooks);
+}
 
 getBooks()

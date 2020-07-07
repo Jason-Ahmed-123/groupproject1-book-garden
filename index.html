@@ -77,6 +77,49 @@
               <div class="flexbox-button">
                 <button type="button" class="btn btn-warning search" id="searchBtn">Search</button>
               </div>
+        <span class="border border-primary"></span> <!-- this span is to add borders to the grid -->
+        <div class="row">
+          <div class="col-md-3 bookDetails">
+            <!--One of three columns-->
+
+            <h4>Search books by title, author, or genre:</h4>
+
+            <div>
+                  <form id="booksCrit">
+                    <div class="form-group">
+                      <label for="AuthorInput">Author:</label>
+                      <input type="text" class="form-control" id="AuthorInput" placeholder="Author name">
+                    </div>
+                    <div class="form-group">
+                      <label for="TitleInput">Book title:</label>
+                      <input type="text" class="form-control" id="TitleInput" placeholder="Book title">
+                    </div>
+                    <div class="form-group">
+                        <label for="GenreInput">Genre:</label>
+                        <input type="text" class="form-control" id="GenreInput" placeholder="Genre, fiction, non-fiction, etc.">
+                      </div>
+                      
+                    <form>
+                    <label for="PublishingDate">Publishing dates range:</label>
+                        <div class="form-row">
+                          <div class="col">
+                            <input type="text" class="form-control" placeholder="From:">
+                          </div>
+                          <div class="col">
+                            <input type="text" class="form-control" placeholder="To:">
+                          </div>
+                        </div>
+                    </form>
+                      
+                    <div class="flexbox-button">
+                      <button type="submit" class="btn btn-warning search">Search</button>
+                    </div>
+
+                  </form>
+                  <br>
+
+
+            </div>
 
           </div>
 
@@ -110,6 +153,10 @@
           <div class="card">
             <div class="card-body">
               Book results will go here, in this Bootstrap card
+            <div class="card">
+                <div id= cardContainment class="card-body">
+                  
+                </div>
             </div>
           </div>
         </div>
@@ -126,6 +173,20 @@
   <!-- Footer panel -->
   <footer>
     <h5>&copy;2020 - Sanneman, Euge, Altamirano, Ahmed</h5>
+<<<<<<< HEAD
+</footer>
+
+<!-- Link to JavaScript -->
+
+
+<!-- Bootstrap JS links -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="./assets/js/script.js"></script>
+<script src="assets/js/sript.js"></script>
+<<<<<<< .merge_file_hnEiu6
+=======
   </footer>
 
   <!-- Link to JavaScript -->
@@ -143,6 +204,9 @@
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
     crossorigin="anonymous"></script>
   <script src="./assets/js/script.js"></script>
+>>>>>>> 87ba5dc7d1ddfb6024b7943924b39c7f3dfe1607
+=======
+>>>>>>> .merge_file_UwdhN4
 </body>
 
 </html>
