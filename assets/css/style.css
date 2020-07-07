@@ -1,3 +1,7 @@
+body {
+  /* font-family: fantasy; */
+}
+
 /* Header elements */
 header {
   z-index: 99;
@@ -102,9 +106,7 @@ main {
   background-attachment: fixed;
 }
 
-/* Need to have visible, but transparent, rounded-corners columns. Still to be done. */
-.container {
-}
+/* visible, but transparent, rounded-corners columns */
 
 .bookDetails {
   padding: 12px 36px 12px 36px;
@@ -156,7 +158,21 @@ main {
   color: black;
   border-width: 10px;
   border-color: gold;
-  background-color: ;
+}
+
+.blurb {
+  padding: 12px 36px 12px 36px;
+  border-radius: 25px;
+  color: white;
+  font-size: larger;
+  /* background: rgba(81, 97, 88, 0.6); */
+  background-image: linear-gradient(rgba(81, 97, 88, 0.6), rgba(81, 97, 88, 0.4));
+  box-shadow: 2px 2px 12px 8px rgba(0, 0, 0, 0.2); */
+}
+
+.whatWeDo {
+  padding-left: 48px;
+  padding-right: 48px; 
 }
 
 .card-body {
