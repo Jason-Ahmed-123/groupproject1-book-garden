@@ -3,12 +3,12 @@ var displayBooks = document.querySelector("#cardContainment")
 var titleInput = document.querySelector("TitleInput");
 var genreInput = document.querySelector("GenreInput");
 
-var openLibraryApiUrl = "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A" + authorInput + "/search";
+var openLibraryApiUrl = "http://openlibrary.org/api/books?bibkeys=" + authorInput + "ISBN:0451526538&callback=mycallback";
 
 var getBookInfo = function(titleInput) {
 var openLibraryApiUrl = function(authorInput) {
     // format the github api url
-    var openLibraryApiUrl = "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A" + authorInput + "/search";
+    var openLibraryApiUrl = "http://openlibrary.org/api/books?bibkeys=" + authorInput + "ISBN:0451526538&callback=mycallback";
 
     // make a request to the url
     fetch(openLibraryApiUrl)
@@ -76,7 +76,7 @@ var buttonClickHandler = function(event) {
           // clear old content
           repoContainerEl.textContent = "";
         }
-        console.log(language);
+        console.log(event);
       };
       
 languageButtonsEl.addEventListener("click", buttonClickHandler);
