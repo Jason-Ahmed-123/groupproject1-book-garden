@@ -27,13 +27,13 @@ var openLibraryApiUrl = function(user) {
       });
     };
 
-//create form variable for form submot handler//
-
+//create form variable for form submit handler//
+//var authorInput//
 
 var formSubmitHandler = function(event) {
     event.preventDefault();
     // var for form submit (replace username)//
-    var username = nameInputEl.value.trim();
+    var authorInput = authorInputEl.value.trim();
       
     if (username) {
         getUserRepos(username);
