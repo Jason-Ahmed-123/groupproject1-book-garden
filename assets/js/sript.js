@@ -1,7 +1,7 @@
 //OPEN LIBRARY API//
 var displayBooks = document.querySelector("#cardContainment")
 var titleInput = document.querySelector("TitleInput");
-var genreInput = document.querySelecetor("GenreInput");
+var genreInput = document.querySelector("GenreInput");
 var displayBooks = document.querySelector("#cardContainment")
 
 
