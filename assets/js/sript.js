@@ -2,11 +2,10 @@
 var displayBooks = document.querySelector("#cardContainment")
 var titleInput = document.querySelector("TitleInput");
 var genreInput = document.querySelector("GenreInput");
-var displayBooks = document.querySelector("#cardContainment")
 
+var openLibraryApiUrl = "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A" + authorInput + "/search";
 
 var getBookInfo = function(titleInput) {
-
 var openLibraryApiUrl = function(authorInput) {
     // format the github api url
     var openLibraryApiUrl = "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A" + authorInput + "/search";
@@ -16,8 +15,8 @@ var openLibraryApiUrl = function(authorInput) {
       .then(function(response) {
         // request was successful
         if (response.ok) {
-          response.json().then(function(data) {
-            displayAuthor(data, author);
+          response.json().then(function() {
+            displayBooks(books, authorInput);
               console.log(openLibraryApiUrl)
           });
         } else {
