@@ -1,17 +1,15 @@
 //OPEN LIBRARY API//
 
-var authorInput = document.querySelector("AuthorInput");
-var titleInput = document.querySelector("TitleInput");
-var genreInput = document.querySelecetor("GenreInput");
-var repoSearchTerm = document.querySelector("#repo-search-term");
+var authorInput = document.querySelector("#AuthorInput");
+var titleInput = document.querySelector("#TitleInput");
+var genreInput = document.querySelecetor("#GenreInput");
+var displayBooks = document.querySelector("#cardContainment")
 
-var openLibraryApiUrl = function(user) {
+
+var getBooks = function(authorInput) {
     // format the github api url
-    var openLibraryApiUrl = "http://openlibrary.org/api/books?bibkeys=" + authorInput + "ISBN:0451526538&callback=mycallback";
+var openLibraryApiUrl = "http://openlibrary.org/api/books?bibkeys=" + authorInput + "ISBN:0451526538&callback=mycallback";
     
-var getBooks = function(titleResponse) {
-  var bookImg;
-    // make a request to the url
     fetch(openLibraryApiUrl)
       .then(function(response) {
         // request was successful
@@ -26,7 +24,7 @@ var getBooks = function(titleResponse) {
               let newBook = {
                 title: title,
                 author: author, 
-                image: bookImg
+                image: bookImg,
               }
               console.log(newBook)
             })
@@ -42,8 +40,7 @@ var getBooks = function(titleResponse) {
         // Notice this `.catch()` getting chained onto the end of the `.then()` method
         alert("Unable to find author");
       });
-
-    };
+  };
 
 //create form variable for form submot handler//
 
