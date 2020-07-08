@@ -1,14 +1,12 @@
-//OPEN LIBRARY API//
-
-var authorInput = document.querySelector("#AuthorInput");
-var titleInput = document.querySelector("#TitleInput");
-var genreInput = document.querySelecetor("#GenreInput");
+var authorInput = document.getElementById("AuthorInput");
+//var titleInput = document.querySelector("#TitleInput");
+//var genreInput = document.querySelecetor("#GenreInput");
 var displayBooks = document.querySelector("#cardContainment")
 
 
 var getBooks = function(authorInput) {
     // format the github api url
-var openLibraryApiUrl = "http://openlibrary.org/api/books?bibkeys=" + authorInput + "ISBN:0451526538&callback=mycallback";
+var openLibraryApiUrl = "http://openlibrary.org/search.json?author=" + authorInput;
     
     fetch(openLibraryApiUrl)
       .then(function(response) {
@@ -17,32 +15,49 @@ var openLibraryApiUrl = "http://openlibrary.org/api/books?bibkeys=" + authorInpu
 
           response.json().then(function(data) {
             console.log(data)
-            data.items.forEach(book => {
-              let author = book.//name from api//.authors
-              bookImg = book.//add api info//
+
+            displayBooks(data.items, authorInput)
+
+            data.items = data.items.slice(0, 5);
+            data.items.forEach((search) => {
+              let author = search.docs.author_name;
+              let title = search.docs.title;
+              bookImg = search.docs.cover_i;
 
               let newBook = {
                 title: title,
                 author: author, 
                 image: bookImg,
-              }
+              };
               console.log(newBook)
-            })
-            displayAuthor(data, author);
+            
+          var displayBooks = document.querySelector(".bookResults");
 
-              console.log(openLibraryApiUrl)
-          });
-        } else {
-          alert("Error: " + response.statusText);
-        }
-      })
-      .catch(function(error) {
-        // Notice this `.catch()` getting chained onto the end of the `.then()` method
-        alert("Unable to find author");
+          var card = document.createElement("div");
+            card.classList.add("card");
+            displayBooks.appendChild(card);
+
+          var cardBody = document.createElement("div");
+            cardBody.classList.add("card-body");
+            card.appendChild(cardBody);
+
+          var tagH = document.createElement("h1");
+            tagH.textContent = title;
+            cardBody.appendChild(tagH);
+        });
+        displaybook(data, authorInput);
+        //displayBook(data,titleResponse);
+        //newbooks[Matth.floor(Math.random * newbooks.length)]
       });
-  };
 
-//create form variable for form submot handler//
+    } else {
+      alert("Error: " + response.statusText);
+    }
+    });
+
+    console.log(openLibraryApiUrl);
+};
+//create form variable for form submit handler//
 
 console.log(authorInput);
 
@@ -58,62 +73,25 @@ searchBtn.addEventListener('click', (event)=> {
     }
 
     // call on the getBooks to make API request
-    getBooks(searchTerm)
+    getBooks(authorInput)
     
 })
 //end btn//
 
-
-
-
 var formSubmitHandler = function(event) {
     event.preventDefault();
     // var for form submit (replace username)//
-
-    var username = nameInputEl.value.trim();
       
-    if (username) {
-        getUserRepos(username);
-        nameInputEl.value = "";
+    if (authorInput.value) {
+        getBookInfo(authorInput.value);
+        authorInput.value = "";
     } else {
-    alert("Please enter title/author/genre");
-
+    alert("Please enter author");
     }
         console.log(event);
     }; 
 
-    console.log(formSubmitHandler)
 
-    //add event listener for form submit//
-    //add append child?//
-/*var getFeaturedRepos = function(language) {
-    var apiUrl = "openlibrary/plugins/openlibrary/js?q=" + language + "+is:featured&sort=help-wanted-issues";
+var someVariable = "World"
 
-      
-        fetch(apiUrl).then(function(response) {
-          if (response.ok) {
-            response.json().then(function(data) {
-
-              displayRepos(data.items, language);
-
-            });
-          } else {
-            alert("Error: " + response.statusText);
-          }
-        });
-      };   
-
-      //change language//
-var buttonClickHandler = function(event) {
-    var language = event.target.getAttribute("data-language");
-        if (language) {
-          getFeaturedRepos(language);
-        
-          // clear old content
-          repoContainerEl.textContent = "";
-        }
-        console.log(language);
-
-      };
-      
-languageButtonsEl.addEventListener("click", buttonClickHandler);*/
+console.log("Hello " + someVariable)  
