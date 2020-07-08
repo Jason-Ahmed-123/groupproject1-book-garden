@@ -88,13 +88,6 @@ var formSubmitHandler = function(event) {
     console.log(formSubmitHandler)
 
     //add event listener for form submit//
-
-<<<<<<< HEAD
-=======
-
-    //add append child?//
->>>>>>> 58bef147bbcf945633177b3739d8fee23a2c359d
-
     //add append child?//
 /*var getFeaturedRepos = function(language) {
     var apiUrl = "openlibrary/plugins/openlibrary/js?q=" + language + "+is:featured&sort=help-wanted-issues";
