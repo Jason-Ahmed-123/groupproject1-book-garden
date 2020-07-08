@@ -1,21 +1,33 @@
 //OPEN LIBRARY API//
 
-var authorInput = document.querySelector("AuthorInput");
-var titleInput = document.querySelector("TitleInput");
-var genreInput = document.querySelecetor("GenreInput");
-var repoSearchTerm = document.querySelector("#repo-search-term");
+var authorInput = document.querySelector("#AuthorInput");
+var titleInput = document.querySelector("#TitleInput");
+var genreInput = document.querySelecetor("#GenreInput");
+var displayBooks = document.querySelector("#cardContainment")
 
-var openLibraryApiUrl = function(user) {
+
+var getBooks = function(authorInput) {
     // format the github api url
-    var openLibraryApiUrl = "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A" + authorInput + "/search";
-
-    // make a request to the url
+var openLibraryApiUrl = "http://openlibrary.org/api/books?bibkeys=" + authorInput + "ISBN:0451526538&callback=mycallback";
+    
     fetch(openLibraryApiUrl)
       .then(function(response) {
         // request was successful
         if (response.ok) {
 
           response.json().then(function(data) {
+            console.log(data)
+            data.items.forEach(book => {
+              let author = book.//name from api//.authors
+              bookImg = book.//add api info//
+
+              let newBook = {
+                title: title,
+                author: author, 
+                image: bookImg,
+              }
+              console.log(newBook)
+            })
             displayAuthor(data, author);
 
               console.log(openLibraryApiUrl)
@@ -28,10 +40,29 @@ var openLibraryApiUrl = function(user) {
         // Notice this `.catch()` getting chained onto the end of the `.then()` method
         alert("Unable to find author");
       });
-
-    };
+  };
 
 //create form variable for form submot handler//
+
+console.log(authorInput);
+
+//search btn//
+
+let searchBtn = document.querySelector('#searchBtn')
+searchBtn.addEventListener('click', (event)=> {
+    let searchTerm = authorInput.value
+    event.preventDefault()
+    if (searchTerm.includes(" ")) {
+        searchTerm = searchTerm.split(" ").join("+")
+        console.log(searchTerm)
+    }
+
+    // call on the getBooks to make API request
+    getBooks(searchTerm)
+    
+})
+//end btn//
+
 
 
 
@@ -51,12 +82,11 @@ var formSubmitHandler = function(event) {
         console.log(event);
     }; 
 
+    console.log(formSubmitHandler)
+
     //add event listener for form submit//
-
-
     //add append child?//
-
-var getFeaturedRepos = function(language) {
+/*var getFeaturedRepos = function(language) {
     var apiUrl = "openlibrary/plugins/openlibrary/js?q=" + language + "+is:featured&sort=help-wanted-issues";
 
       
@@ -86,4 +116,4 @@ var buttonClickHandler = function(event) {
 
       };
       
-languageButtonsEl.addEventListener("click", buttonClickHandler);
+languageButtonsEl.addEventListener("click", buttonClickHandler);*/
