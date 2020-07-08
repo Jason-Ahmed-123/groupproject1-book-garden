@@ -16,6 +16,7 @@ var getBooks = function(titleResponse) {
       .then(function(response) {
         // request was successful
         if (response.ok) {
+
           response.json().then(function(data) {
             console.log(data)
             data.items.forEach(book => {
@@ -67,6 +68,7 @@ searchBtn.addEventListener('click', (event)=> {
 
 
 
+
 var formSubmitHandler = function(event) {
     event.preventDefault();
     // var for form submit (replace username)//
@@ -87,6 +89,11 @@ var formSubmitHandler = function(event) {
 
     //add event listener for form submit//
 
+<<<<<<< HEAD
+=======
+
+    //add append child?//
+>>>>>>> 58bef147bbcf945633177b3739d8fee23a2c359d
 
     //add append child?//
 /*var getFeaturedRepos = function(language) {
