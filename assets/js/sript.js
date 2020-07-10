@@ -1,13 +1,12 @@
-var authorInput = document.getElementById("AuthorInput");
 //var titleInput = document.querySelector("#TitleInput");
 //var genreInput = document.querySelecetor("#GenreInput");
-var displayBooks = document.querySelector("#cardContainment")
-
+var displayBooks = document.querySelector("bookSearchResults")
+console.log(authorInput)
 
 var getBooks = function(authorInput) {
     // format the github api url
 var openLibraryApiUrl = "http://openlibrary.org/search.json?author=" + authorInput;
-    
+    console.log(openLibraryApiUrl)
     fetch(openLibraryApiUrl)
       .then(function(response) {
         // request was successful
@@ -63,8 +62,9 @@ console.log(authorInput);
 
 //search btn//
 
-let searchBtn = document.querySelector('#searchBtn')
-searchBtn.addEventListener('click', (event)=> {
+let searchBtn2 = document.querySelector('#searchBtn')
+searchBtn2.addEventListener('click', (event)=> {
+  var authorInput = document.getElementById("AuthorInput");
     let searchTerm = authorInput.value
     event.preventDefault()
     if (searchTerm.includes(" ")) {
