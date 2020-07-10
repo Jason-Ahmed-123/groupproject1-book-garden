@@ -1,7 +1,6 @@
 body {
   /* font-family: fantasy; */
 }
-
 /* Header elements */
 header {
   z-index: 99;
@@ -14,7 +13,6 @@ header {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-
 header h1 {
   font-weight: 300;
   margin: top = 10px;
@@ -22,16 +20,13 @@ header h1 {
   font-size: 35px;
   line-height: 44px;
 }
-
 header a {
   text-decoration: none;
   color: #fff;
 }
-
 header nav {
   margin: 7px 0;
 }
-
 header nav ul {
   display: flex;
   flex-wrap: wrap;
@@ -39,29 +34,24 @@ header nav ul {
   align-items: center;
   list-style: none;
 }
-
 header nav ul li a {
   padding: 15px 15px;
   font-weight: medium;
   font-size: 1.55vw;
 }
-
 header nav ul li a:hover {
   background: rgb(146, 219, 219);
   color: #024e76;
   border-radius: 15px;
   text-shadow: none;
 }
-
 header a {
   text-decoration: none;
   color: #fff;
 }
-
 header nav {
   margin: 7px 0;
 }
-
 header nav ul {
   display: flex;
   flex-wrap: wrap;
@@ -69,13 +59,11 @@ header nav ul {
   align-items: center;
   list-style: none;
 }
-
 header nav ul li a {
   padding: 10px 15px;
   font-weight: medium;
   font-size: 1.55vw;
 }
-
 header nav ul li a:hover {
   background: darkseagreen;
   color: white;
@@ -93,21 +81,16 @@ main {
   align-items: flex-start;
   height: auto;
 }
-
 main {
   color: white;
 }
-
 .bigimage {
-  /*background-image: url("https://gallery.yopriceville.com/var/albums/Fantasy/Beautiful_Magic_Fantasy_Garden_Wallpaper.jpg?m=1399676400");*/
   background-image: url("https://gallery.yopriceville.com/var/albums/Fantasy/Beautiful_Magic_Fantasy_Garden_Wallpaper.jpg?m=1399676400");
   background-size: cover;
   background-position: bottom;
   background-attachment: fixed;
 }
-
 /* visible, but transparent, rounded-corners columns */
-
 .bookDetails {
   padding: 12px 36px 12px 36px;
   background-color: rgba(4, 161, 70, 0.2);
@@ -118,13 +101,13 @@ main {
   border-radius: 25px;
   background-color: ;
 }
-
 .flexbox-button {
   display: flex;
   margin-bottom: 12px;
   justify-content: center;
 }
 
+/* Button actions */
 .search {
   padding-left: 24px;
   padding-right: 24px;
@@ -135,11 +118,24 @@ main {
   border-width: 2px;
   border-radius: 15px;
 }
-
 .search:hover {
   background-color: #9c82ea;
   color: white;
+  border: none;
 }
+.search:active {
+  background-color: #8268d2;
+  border: none;
+}
+.search:visited {
+  background-color: #8268d2;
+  border: none;
+}
+.search:focus {
+  background-color: #8268d2;
+  border: none;
+}
+/* End button actions */
 
 .bookResults {
   padding: 12px 36px 12px 36px;
@@ -150,37 +146,30 @@ main {
   box-shadow: 2px 2px 12px 8px rgba(0, 0, 0, 0.6);
   grid-column-start: 10;
 }
-
 .welcome {
   padding-right: 48px;
   padding-left: 48px;
   text-align: center;
-  color: black;
   border-width: 10px;
   border-color: gold;
 }
-
 .blurb {
   padding: 12px 36px 12px 36px;
   border-radius: 25px;
   color: white;
   font-size: larger;
-  /* background: rgba(81, 97, 88, 0.6); */
   background-image: linear-gradient(rgba(81, 97, 88, 0.6), rgba(81, 97, 88, 0.4));
   box-shadow: 2px 2px 12px 8px rgba(0, 0, 0, 0.2); */
 }
-
 .whatWeDo {
   padding-left: 48px;
   padding-right: 48px; 
 }
-
 .card-body {
   color: gray;
   border-width: 1px;
   border-radius: 15px;
 }
-
 .card {
   margin: 0;
   border-radius: 15px;
@@ -188,7 +177,6 @@ main {
 /* Main Section style ends */
 
 /* Footer */
-
 footer {
   background: #293f50;
   color: white;
@@ -198,10 +186,57 @@ footer {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-
 .form-control {
   border-width: 1px;
   border: ;
   border-color: white;
   border-radius: 15px;
 }
+
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width: 575px) {
+  header h1 {
+    /* this will be applied on any screen smaller than 575px */
+    font-size: 60px;
+    }
+
+    header nav ul li a {
+      display: none;
+    }
+
+    /* overides normal-screen-size CSS instructions */
+    .welcome {
+      padding-left: 0px;
+      padding-right: 0px;
+      order: 1;
+    }
+  
+    .whatWeDo {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    /* This will "hide" the third paragraph of the "welcome" pane */
+    .hideOnMobiles {
+      display: none;
+    }
+
+    .bookDetails {
+      order: 2;
+    }
+
+    .bookResults {
+      order: 3;
+    }
+
+    /* Widen the search button */
+    .search {
+      width: 100%;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      font-weight: 500;
+    }
+    
+  }
+  
