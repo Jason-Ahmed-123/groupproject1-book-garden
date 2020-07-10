@@ -71,6 +71,7 @@ header nav ul li a:hover {
   text-shadow: none;
 }
 /* Header elements end */
+
 /* Main Section Style Start */
 main {
   padding: 12px;
@@ -84,7 +85,6 @@ main {
   color: white;
 }
 .bigimage {
-  /*background-image: url("https://gallery.yopriceville.com/var/albums/Fantasy/Beautiful_Magic_Fantasy_Garden_Wallpaper.jpg?m=1399676400");*/
   background-image: url("https://gallery.yopriceville.com/var/albums/Fantasy/Beautiful_Magic_Fantasy_Garden_Wallpaper.jpg?m=1399676400");
   background-size: cover;
   background-position: bottom;
@@ -106,6 +106,8 @@ main {
   margin-bottom: 12px;
   justify-content: center;
 }
+
+/* Button actions */
 .search {
   padding-left: 24px;
   padding-right: 24px;
@@ -119,7 +121,22 @@ main {
 .search:hover {
   background-color: #9c82ea;
   color: white;
+  border: none;
 }
+.search:active {
+  background-color: #8268d2;
+  border: none;
+}
+.search:visited {
+  background-color: #8268d2;
+  border: none;
+}
+.search:focus {
+  background-color: #8268d2;
+  border: none;
+}
+/* End button actions */
+
 .bookResults {
   padding: 12px 36px 12px 36px;
   background-color: rgba(4, 161, 70, 0.2);
@@ -133,7 +150,6 @@ main {
   padding-right: 48px;
   padding-left: 48px;
   text-align: center;
-  color: black;
   border-width: 10px;
   border-color: gold;
 }
@@ -142,7 +158,6 @@ main {
   border-radius: 25px;
   color: white;
   font-size: larger;
-  /* background: rgba(81, 97, 88, 0.6); */
   background-image: linear-gradient(rgba(81, 97, 88, 0.6), rgba(81, 97, 88, 0.4));
   box-shadow: 2px 2px 12px 8px rgba(0, 0, 0, 0.2); */
 }
@@ -160,6 +175,7 @@ main {
   border-radius: 15px;
 }
 /* Main Section style ends */
+
 /* Footer */
 footer {
   background: #293f50;
@@ -176,3 +192,51 @@ footer {
   border-color: white;
   border-radius: 15px;
 }
+
+
+/* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
+@media screen and (max-width: 575px) {
+  header h1 {
+    /* this will be applied on any screen smaller than 575px */
+    font-size: 60px;
+    }
+
+    header nav ul li a {
+      display: none;
+    }
+
+    /* overides normal-screen-size CSS instructions */
+    .welcome {
+      padding-left: 0px;
+      padding-right: 0px;
+      order: 1;
+    }
+  
+    .whatWeDo {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
+    /* This will "hide" the third paragraph of the "welcome" pane */
+    .hideOnMobiles {
+      display: none;
+    }
+
+    .bookDetails {
+      order: 2;
+    }
+
+    .bookResults {
+      order: 3;
+    }
+
+    /* Widen the search button */
+    .search {
+      width: 100%;
+      padding-top: 12px;
+      padding-bottom: 12px;
+      font-weight: 500;
+    }
+    
+  }
+  
