@@ -27,7 +27,8 @@ var getBooks = function (titleResponse) {
     if (response.ok) {
       response.json().then(function (data) {
         console.log(data);
-        data.items = data.items.slice(0, 5);
+        // Give the amount of results from data
+        data.items = data.items.slice(0, 1);
         data.items.forEach((book) => {
           let title = book.volumeInfo.title;
           let author = book.volumeInfo.authors;
