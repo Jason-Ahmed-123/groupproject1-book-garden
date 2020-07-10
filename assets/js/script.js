@@ -2,13 +2,7 @@
 
 // GoogleBooks Api Work
 
-<<<<<<< HEAD
 var titleInput = document.getElementById("TitleInput");
-=======
-var authorInput = document.querySelector("#AuthorInput");
-var titleInput = document.getElementById("TitleInput");
-var genreInput = document.querySelector("#GenreInput");
->>>>>>> develop
 
 /* let searchOptions = [authorInput.value, titleInput.value, genreInput.value]
 let searchFlags = []
@@ -33,10 +27,7 @@ var getBooks = function (titleResponse) {
     if (response.ok) {
       response.json().then(function (data) {
         console.log(data);
-<<<<<<< HEAD
-        data.items = data.items.slice(0, 5);
-=======
->>>>>>> develop
+        data.items = data.items.slice(0, 1);
         data.items.forEach((book) => {
           let title = book.volumeInfo.title;
           let author = book.volumeInfo.authors;
@@ -48,7 +39,6 @@ var getBooks = function (titleResponse) {
             image: bookImg,
           };
           console.log(newBook);
-<<<<<<< HEAD
           // HTML edit in javascript
           var displayBooks = document.querySelector(".bookResults");
 
@@ -63,8 +53,6 @@ var getBooks = function (titleResponse) {
           var tagH = document.createElement("h1");
           tagH.textContent = title;
           cardBody.appendChild(tagH);
-=======
->>>>>>> develop
         });
 
         //displayBook(data,titleResponse);
@@ -87,7 +75,7 @@ console.log(formSubmitHandler);
 
 //titleInput = addEventListener("submit", formSubmitHandler)
 // get the button
-let searchBtn = document.querySelector("#searchBtn");
+let searchBtn = document.querySelector("#searchTitle");
 searchBtn.addEventListener("click", (event) => {
   let searchTerm = titleInput.value;
   event.preventDefault();
@@ -110,18 +98,6 @@ function formSubmitHandler(event) {
     //alert("Please enter a book title");
   }
   console.log(event);
-<<<<<<< HEAD
 }
 
 //getBooks();
-=======
-}
-
-for (var i = 0; i < data.list.length; i = 0) {
-  var bookList = data.list[i];
-
-  bookContainer.appendChild(displayBooks);
-}
-
-getBooks();
->>>>>>> develop
