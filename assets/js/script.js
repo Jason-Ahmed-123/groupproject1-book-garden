@@ -3,6 +3,7 @@
 // GoogleBooks Api Work
 
 var titleInput = document.getElementById("TitleInput");
+var genreInput = document.getElementById("GenreInput");
 
 /* let searchOptions = [authorInput.value, titleInput.value, genreInput.value]
 let searchFlags = []
@@ -100,4 +101,43 @@ function formSubmitHandler(event) {
   console.log(event);
 }
 
-//getBooks();
+// Genre Input Start -------------
+// var getBookGenre = function (genreInput) {
+//   var googleApiUrl =
+//     "https://www.googleapis.com/books/v1/volumes?q=" +
+//     genreInput +
+//     "&key=AIzaSyCRSXdaLKLF0hPkiN03bDL9-swkrelDh8w";
+//   fetch(googleApiUrl).then(function (response) {
+//     if (response.ok) {
+//       response.json().then(function (data) {
+//         console.log(data);
+//         data.items = data.items.slice(0, 1);
+//         data.items.forEach((book) => {
+//           let genre = book.volumeInfo.genre;
+
+//           let genreBook = {
+//             genre: genre,
+//           };
+//           console.log(genreBook);
+//           // HTML edit in javascript
+//           var displayBooks = document.querySelector(".bookResults");
+
+//           var card = document.createElement("div");
+//           card.classList.add("card");
+//           displayBooks.appendChild(card);
+
+//           var cardBody = document.createElement("div");
+//           cardBody.classList.add("card-body");
+//           card.appendChild(cardBody);
+
+//           var tagH = document.createElement("h1");
+//           tagH.textContent = genre;
+//           cardBody.appendChild(tagH);
+//           newbooks[Math.floor(Math.random * newbooks.length)];
+//         });
+//       });
+//     } else {
+//       alert("Error: ");
+//     }
+//   });
+// };
