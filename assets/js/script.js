@@ -78,7 +78,8 @@ console.log(formSubmitHandler);
 // get the button
 let searchBtn = document.querySelector("#searchBtn");
 searchBtn.addEventListener("click", (event) => {
-  let searchTerm = titleInput.value;
+ 
+    let searchTerm = titleInput.value;
   event.preventDefault();
   if (searchTerm.includes(" ")) {
     searchTerm = searchTerm.split(" ").join("+");
