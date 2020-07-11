@@ -51,8 +51,8 @@ var getBooks = function (titleResponse) {
           cardBody.classList.add("card-body");
           card.appendChild(cardBody);
 
-          var tagH = document.createElement("h1");
-          tagH.textContent = title;
+          var tagH = document.createElement("img");
+          tagH.src = bookImg;
           cardBody.appendChild(tagH);
         });
 
@@ -63,16 +63,10 @@ var getBooks = function (titleResponse) {
       alert("Error: ");
     }
   });
-
-  console.log(googleApiUrl);
 };
 // -------Function to fetch Book Information End-------
 
-console.log(titleInput);
-
 //var titleInput = document.querySelector("#booksCrit")
-
-console.log(formSubmitHandler);
 
 //titleInput = addEventListener("submit", formSubmitHandler)
 // get the button
@@ -82,7 +76,6 @@ searchBtn.addEventListener("click", (event) => {
   event.preventDefault();
   if (searchTerm.includes(" ")) {
     searchTerm = searchTerm.split(" ").join("+");
-    console.log(searchTerm);
   }
 
   // call on the getBooks to make API request
@@ -98,7 +91,6 @@ function formSubmitHandler(event) {
   } else {
     //alert("Please enter a book title");
   }
-  console.log(event);
 }
 
 // Genre Input Start -------------
