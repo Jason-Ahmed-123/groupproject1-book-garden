@@ -60,8 +60,8 @@ var openLibraryApiUrl = "http://openlibrary.org/search.json?author=" + authorInp
 
 //search btn//
 
-let searchBtn2 = document.querySelector('#searchBtn')
-searchBtn2.addEventListener("click", (event) => {
+let searchAuthor = document.querySelector('#searchAuthor')
+searchAuthor.addEventListener("click", (event) => {
   var authorInput = document.getElementById("AuthorInput");
     let searchTerm = authorInput.value
     event.preventDefault()
