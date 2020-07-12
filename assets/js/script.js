@@ -55,9 +55,6 @@ var getBooks = function (titleResponse) {
           tagH.src = bookImg;
           cardBody.appendChild(tagH);
         });
-
-        //displayBook(data,titleResponse);
-        //newbooks[Matth.floor(Math.random * newbooks.length)]
       });
     } else {
       alert("Error: ");
@@ -66,9 +63,6 @@ var getBooks = function (titleResponse) {
 };
 // -------Function to fetch Book Information End-------
 
-//var titleInput = document.querySelector("#booksCrit")
-
-//titleInput = addEventListener("submit", formSubmitHandler)
 // get the button
 let searchBtn = document.querySelector("#searchTitle");
 searchBtn.addEventListener("click", (event) => {
@@ -93,43 +87,48 @@ function formSubmitHandler(event) {
   }
 }
 
-// Genre Input Start -------------
-// var getBookGenre = function (genreInput) {
-//   var googleApiUrl =
-//     "https://www.googleapis.com/books/v1/volumes?q=" +
-//     genreInput +
-//     "&key=AIzaSyCRSXdaLKLF0hPkiN03bDL9-swkrelDh8w";
-//   fetch(googleApiUrl).then(function (response) {
-//     if (response.ok) {
-//       response.json().then(function (data) {
-//         console.log(data);
-//         data.items = data.items.slice(0, 1);
-//         data.items.forEach((book) => {
-//           let genre = book.volumeInfo.genre;
+// ----------- Genre Input Start -------------
+var getBookGenre = function (genreInput) {
+  var googleApiUrl =
+    "https://www.googleapis.com/books/v1/volumes?q=" +
+    genreInput +
+    "&key=AIzaSyCRSXdaLKLF0hPkiN03bDL9-swkrelDh8w";
+  fetch(googleApiUrl).then(function (response) {
+    if (response.ok) {
+      response.json().then(function (data) {
+        data.items = data.items.slice(0, 1);
+        data.items.forEach((book) => {
+          let genre = book.volumeInfo.subject;
 
-//           let genreBook = {
-//             genre: genre,
-//           };
-//           console.log(genreBook);
-//           // HTML edit in javascript
-//           var displayBooks = document.querySelector(".bookResults");
+          let genreBook = {
+            genre: genre,
+          };
+          // HTML edit in javascript
+          var displayBooks = document.querySelector(".bookResults");
 
-//           var card = document.createElement("div");
-//           card.classList.add("card");
-//           displayBooks.appendChild(card);
+          var card = document.createElement("div");
+          card.classList.add("card");
+          displayBooks.appendChild(card);
 
-//           var cardBody = document.createElement("div");
-//           cardBody.classList.add("card-body");
-//           card.appendChild(cardBody);
+          var cardBody = document.createElement("div");
+          cardBody.classList.add("card-body");
+          card.appendChild(cardBody);
 
-//           var tagH = document.createElement("h1");
-//           tagH.textContent = genre;
-//           cardBody.appendChild(tagH);
-//           newbooks[Math.floor(Math.random * newbooks.length)];
-//         });
-//       });
-//     } else {
-//       alert("Error: ");
-//     }
-//   });
-// };
+          var tagH = document.createElement("h1");
+          tagH.textContent = genreBook;
+          cardBody.appendChild(tagH);
+        });
+      });
+    } else {
+      alert("Error: ");
+    }
+  });
+};
+let genresearchBtn = document.querySelector("#searchGenre");
+searchGenre.addEventListener("click", (event) => {
+  let searchGenre = genreInput.value;
+  event.preventDefault();
+  if (searchGenre.includes(" ")) {
+    searchGenre = searchGenre.split(" ").join("+");
+  }
+});
