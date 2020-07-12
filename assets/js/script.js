@@ -66,7 +66,8 @@ var getBooks = function (titleResponse) {
 // get the button
 let searchBtn = document.querySelector("#searchTitle");
 searchBtn.addEventListener("click", (event) => {
-  let searchTerm = titleInput.value;
+ 
+    let searchTerm = titleInput.value;
   event.preventDefault();
   if (searchTerm.includes(" ")) {
     searchTerm = searchTerm.split(" ").join("+");

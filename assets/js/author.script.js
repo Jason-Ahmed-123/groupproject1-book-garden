@@ -1,89 +1,41 @@
-//OPEN LIBRARY API//
+var displayAuthorBooks = document.querySelector(".bookResults");
+var cover_i
+var getAuthorBooks = function (authorInput) {
+  var openLibraryApiUrl = "http://openlibrary.org/search.json?author=" + authorInput;
+  var coverImgUrl
+  fetch(openLibraryApiUrl)
+    .then(function (response) {
 
-var authorInput = document.querySelector("AuthorInput");
-var titleInput = document.querySelector("TitleInput");
-var genreInput = document.querySelecetor("GenreInput");
-var repoSearchTerm = document.querySelector("#repo-search-term");
+      if (response.ok) {
+        response.json().then(function (data) {
+          cover_i = data.docs[0].cover_i
+          coverImgUrl = "http://covers.openlibrary.org/b/id/" + cover_i + "-M.jpg";
 
-var openLibraryApiUrl = function(user) {
-    // format the github api url
-    var openLibraryApiUrl = "http://openlibrary.org/query.json?type=/type/edition&authors=/authors/OL1A" + authorInput + "/search";
+          var tagH = document.createElement("img");
+          tagH.src = coverImgUrl;
+          document.querySelector("#bookResults").appendChild(tagH)
 
-    // make a request to the url
-    fetch(openLibraryApiUrl)
-      .then(function(response) {
-        // request was successful
-        if (response.ok) {
-
-          response.json().then(function(data) {
-            displayAuthor(data, author);
-
-              console.log(openLibraryApiUrl)
+          data.docs = data.docs.slice(0, 3);
+          data.docs.forEach((doc) => {
+            let author = doc.author_name;
+            let title = doc.title;
           });
-        } else {
-          alert("Error: " + response.statusText);
-        }
-      })
-      .catch(function(error) {
-        // Notice this `.catch()` getting chained onto the end of the `.then()` method
-        alert("Unable to find author");
-      });
-
-    };
-
-//create form variable for form submot handler//
-
-
-
-var formSubmitHandler = function(event) {
-    event.preventDefault();
-    // var for form submit (replace username)//
-
-    var username = nameInputEl.value.trim();
-      
-    if (username) {
-        getUserRepos(username);
-        nameInputEl.value = "";
-    } else {
-    alert("Please enter title/author/genre");
-
-    }
-        console.log(event);
-    }; 
-
-    //add event listener for form submit//
-
-
-    //add append child?//
-
-var getFeaturedRepos = function(language) {
-    var apiUrl = "openlibrary/plugins/openlibrary/js?q=" + language + "+is:featured&sort=help-wanted-issues";
-
-      
-        fetch(apiUrl).then(function(response) {
-          if (response.ok) {
-            response.json().then(function(data) {
-
-              displayRepos(data.items, language);
-
-            });
-          } else {
-            alert("Error: " + response.statusText);
-          }
         });
-      };   
-
-      //change language//
-var buttonClickHandler = function(event) {
-    var language = event.target.getAttribute("data-language");
-        if (language) {
-          getFeaturedRepos(language);
-        
-          // clear old content
-          repoContainerEl.textContent = "";
-        }
-        console.log(language);
-
       };
-      
-languageButtonsEl.addEventListener("click", buttonClickHandler);
+    });
+};
+
+//search btn//
+
+let searchAuthor = document.querySelector('#searchAuthor')
+searchAuthor.addEventListener("click", (event) => {
+  var authorInput = document.getElementById("AuthorInput");
+  let authorSearchTerm = authorInput.value
+  event.preventDefault();
+  if (authorSearchTerm.includes(" ")) {
+    authorSearchTerm = authorSearchTerm.split(" ").join("+")
+    console.log(authorSearchTerm)
+  }
+
+  getAuthorBooks(authorSearchTerm)
+});
