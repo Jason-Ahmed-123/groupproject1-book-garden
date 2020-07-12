@@ -137,7 +137,7 @@ main {
 }
 /* End button actions */
 
-.bookResults {
+#bookResults {
   padding: 12px 36px 12px 36px;
   background-color: rgba(4, 161, 70, 0.2);
   border-width: 1px;
