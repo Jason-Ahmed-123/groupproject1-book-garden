@@ -2,9 +2,8 @@
 
 // GoogleBooks Api Work
 
-var authorInput = document.querySelector("#AuthorInput");
 var titleInput = document.getElementById("TitleInput");
-var genreInput = document.querySelector("#GenreInput");
+var genreInput = document.getElementById("GenreInput");
 
 /* let searchOptions = [authorInput.value, titleInput.value, genreInput.value]
 let searchFlags = []
@@ -29,6 +28,7 @@ var getBooks = function (titleResponse) {
     if (response.ok) {
       response.json().then(function (data) {
         console.log(data);
+        data.items = data.items.slice(0, 1);
         data.items.forEach((book) => {
           let title = book.volumeInfo.title;
           let author = book.volumeInfo.authors;
@@ -40,35 +40,36 @@ var getBooks = function (titleResponse) {
             image: bookImg,
           };
           console.log(newBook);
-        });
+          // HTML edit in javascript
+          var displayBooks = document.querySelector(".bookResults");
 
-        //displayBook(data,titleResponse);
-        //newbooks[Matth.floor(Math.random * newbooks.length)]
+          var card = document.createElement("div");
+          card.classList.add("card");
+          displayBooks.appendChild(card);
+
+          var cardBody = document.createElement("div");
+          cardBody.classList.add("card-body");
+          card.appendChild(cardBody);
+
+          var tagH = document.createElement("img");
+          tagH.src = bookImg;
+          cardBody.appendChild(tagH);
+        });
       });
     } else {
       alert("Error: ");
     }
   });
-
-  console.log(googleApiUrl);
 };
 // -------Function to fetch Book Information End-------
 
-console.log(titleInput);
-
-//var titleInput = document.querySelector("#booksCrit")
-
-console.log(formSubmitHandler);
-
-//titleInput = addEventListener("submit", formSubmitHandler)
 // get the button
-let searchBtn = document.querySelector("#searchBtn");
+let searchBtn = document.querySelector("#searchTitle");
 searchBtn.addEventListener("click", (event) => {
   let searchTerm = titleInput.value;
   event.preventDefault();
   if (searchTerm.includes(" ")) {
     searchTerm = searchTerm.split(" ").join("+");
-    console.log(searchTerm);
   }
 
   // call on the getBooks to make API request
@@ -84,13 +85,50 @@ function formSubmitHandler(event) {
   } else {
     //alert("Please enter a book title");
   }
-  console.log(event);
 }
 
-for (var i = 0; i < data.list.length; i = 0) {
-  var bookList = data.list[i];
+// ----------- Genre Input Start -------------
+var getBookGenre = function (genreInput) {
+  var googleApiUrl =
+    "https://www.googleapis.com/books/v1/volumes?q=" +
+    genreInput +
+    "&key=AIzaSyCRSXdaLKLF0hPkiN03bDL9-swkrelDh8w";
+  fetch(googleApiUrl).then(function (response) {
+    if (response.ok) {
+      response.json().then(function (data) {
+        data.items = data.items.slice(0, 1);
+        data.items.forEach((book) => {
+          let genre = book.volumeInfo.subject;
 
-  bookContainer.appendChild(displayBooks);
-}
+          let genreBook = {
+            genre: genre,
+          };
+          // HTML edit in javascript
+          var displayBooks = document.querySelector(".bookResults");
 
-getBooks();
+          var card = document.createElement("div");
+          card.classList.add("card");
+          displayBooks.appendChild(card);
+
+          var cardBody = document.createElement("div");
+          cardBody.classList.add("card-body");
+          card.appendChild(cardBody);
+
+          var tagH = document.createElement("h1");
+          tagH.textContent = genreBook;
+          cardBody.appendChild(tagH);
+        });
+      });
+    } else {
+      alert("Error: ");
+    }
+  });
+};
+let genresearchBtn = document.querySelector("#searchGenre");
+searchGenre.addEventListener("click", (event) => {
+  let searchGenre = genreInput.value;
+  event.preventDefault();
+  if (searchGenre.includes(" ")) {
+    searchGenre = searchGenre.split(" ").join("+");
+  }
+});
