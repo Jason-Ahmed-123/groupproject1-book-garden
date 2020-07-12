@@ -1,60 +1,62 @@
-//var titleInput = document.querySelector("#TitleInput");
-//var genreInput = document.querySelecetor("#GenreInput");
-//var displayBooks = document.querySelector("bookSearchResults")
 var displayAuthorBooks = document.querySelector(".bookResults");
-var AuthorInput = document.getElementById(AuthorInput)
 
 var getAuthorBooks = function(authorInput) {
     // format the github api url
 var openLibraryApiUrl = "http://openlibrary.org/search.json?author=" + authorInput;
+var coverImgUrl = "http://covers.openlibrary.org/b/id/" + cover_i + "-S.jpg";
     console.log(openLibraryApiUrl)
     fetch(openLibraryApiUrl)
       .then(function(response) {
         // request was successful
         if (response.ok) {
-
           response.json().then(function(data) {
             console.log(data)
-            //data.items = data.items.slice(0, 1);
-            data.items.forEach((search) => {
+            data.docs = data.docs.slice(0, 3);
+            data.docs.forEach((doc) => {
             //displayBooks(data.items, authorInput)
-              let author = search.docs.author_name;
-              let title = search.docs.title;
-              bookImg = search.docs.cover_i;
+              let author = doc.author_name;
+              let title = doc.title;
+              
+                //add fetch (add let newBook) bookImg = doc.cover_i;
+                  //add .then
+                fetch(coverImgUrl)
+                  .then(function(response) {
+                    if (response.ok) {
+                      response.json().then(function(data) {
+                        console.log(data)
+                        data.docs = data.docs.slice(0, 3);
+                        data.docs.forEach((doc) => {
+                          let bookImg = doc.cover_i;
 
-              let newBook = {
-                title: title,
-                author: author, 
-                image: bookImg,
-              };
-              console.log(newBook)
+                          let newBook = {
+                            title: title,
+                            author: author, 
+                            image: bookImg,
+                          };
+                          console.log(newBook)
+                        
+                var displayAuthorBooks = document.querySelector(".bookResults");
+                  var card = document.createElement("div");
+                    card.classList.add("card");
+                      displayAuthorBooks.appendChild(card);
             
-var displayAuthorBooks = document.querySelector(".bookResults");
-  var card = document.createElement("div");
-    card.classList.add("card");
-      displayAuthorBooks.appendChild(card);
-
-  var cardBody = document.createElement("div");
-    cardBody.classList.add("card-body");
-      card.appendChild(card-Body);
-
-  var tagH = document.createElement("h1");
-    tagH.textContent = author;
-      cardBody.appendChild(tagH);
-  });
-        displayAuthorBook(data,authorInput);
-        newbooks[Math.floor(Math.random * newbooks.length)]
-      });
-    } else {
-      alert("Error: ");
-    }
-  });
-
-  console.log(openLibraryApiUrl);
+                var cardBody = document.createElement("div");
+                    cardBody.classList.add("card-body");
+                      card.appendChild(cardBody);
+              
+                var tagH = document.createElement("h1");
+                  tagH.textContent = author;
+                    cardBody.appendChild(tagH);
+                  //let newBook through card body appendChild(tagH) need to go in new fetch image request
+              });
+            });
+          };  
+        });
+      }); 
+    });
+  };  
+});
 };
-
-//create form variable for form submit handler//
-
 
 //search btn//
 
@@ -69,28 +71,7 @@ searchAuthor.addEventListener("click", (event) => {
     }
 
     // call on the getBooks to make API request
-    getBooks(authorInput)
+    getAuthorBooks(authorSearchTerm)
     console.log(authorInput)
     
-})
-//end btn//
-
-var formSubmitHandler = function(event) {
-    event.preventDefault();
-    // var for form submit (replace username)//
-      
-    if (authorInput.value) {
-        getBookInfo(authorInput.value);
-        authorInput.value = "";
-    } else {
-    alert("Please enter author");
-    }
-        console.log(event);
-    }; 
-
-  console.log(formSubmitHandler);
-
-
-var someVariable = "World"
-
-console.log("Hello " + someVariable)  
+});
