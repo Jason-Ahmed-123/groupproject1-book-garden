@@ -5,14 +5,6 @@
 var titleInput = document.getElementById("TitleInput");
 var genreInput = document.getElementById("GenreInput");
 
-/* let searchOptions = [authorInput.value, titleInput.value, genreInput.value]
-let searchFlags = []
-searchOptions.forEach(type => {
-    if (type.length >= 0) {
-        searchFlags.push(type)
-    }
-}) */
-
 // -------Function to fetch Book Information Start-------
 
 var getBooks = function (titleResponse) {
@@ -39,7 +31,6 @@ var getBooks = function (titleResponse) {
             author: author,
             image: bookImg,
           };
-          console.log(newBook);
           // HTML edit in javascript
           var displayBooks = document.querySelector("#bookResults");
 
@@ -56,9 +47,7 @@ var getBooks = function (titleResponse) {
           cardBody.appendChild(tagH);
         });
       });
-    } else {
-      alert("Error: ");
-    }
+    } 
   });
 };
 // -------Function to fetch Book Information End-------
@@ -78,57 +67,5 @@ searchBtn.addEventListener("click", (event) => {
 
 function formSubmitHandler(event) {
   event.preventDefault();
-
-  if (titleInput.value) {
-    //getBookInfo(titleInput.value);
-    //titleInput.value="";
-  } else {
-    //alert("Please enter a book title");
-  }
 }
 
-// ----------- Genre Input Start -------------
-var getBookGenre = function (genreInput) {
-  var googleApiUrl =
-    "https://www.googleapis.com/books/v1/volumes?q=" +
-    genreInput +
-    "&key=AIzaSyCRSXdaLKLF0hPkiN03bDL9-swkrelDh8w";
-  fetch(googleApiUrl).then(function (response) {
-    if (response.ok) {
-      response.json().then(function (data) {
-        data.items = data.items.slice(0, 1);
-        data.items.forEach((book) => {
-          let genre = book.volumeInfo.subject;
-
-          let genreBook = {
-            genre: genre,
-          };
-          // HTML edit in javascript
-          var displayBooks = document.querySelector(".bookResults");
-
-          var card = document.createElement("div");
-          card.classList.add("card");
-          displayBooks.appendChild(card);
-
-          var cardBody = document.createElement("div");
-          cardBody.classList.add("card-body");
-          card.appendChild(cardBody);
-
-          var tagH = document.createElement("h1");
-          tagH.textContent = genreBook;
-          cardBody.appendChild(tagH);
-        });
-      });
-    } else {
-      alert("Error: ");
-    }
-  });
-};
-let genresearchBtn = document.querySelector("#searchGenre");
-searchGenre.addEventListener("click", (event) => {
-  let searchGenre = genreInput.value;
-  event.preventDefault();
-  if (searchGenre.includes(" ")) {
-    searchGenre = searchGenre.split(" ").join("+");
-  }
-});
