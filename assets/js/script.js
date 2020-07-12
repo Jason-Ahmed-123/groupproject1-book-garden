@@ -41,7 +41,7 @@ var getBooks = function (titleResponse) {
           };
           console.log(newBook);
           // HTML edit in javascript
-          var displayBooks = document.querySelector(".bookResults");
+          var displayBooks = document.querySelector("#bookResults");
 
           var card = document.createElement("div");
           card.classList.add("card");
@@ -66,8 +66,7 @@ var getBooks = function (titleResponse) {
 // get the button
 let searchBtn = document.querySelector("#searchTitle");
 searchBtn.addEventListener("click", (event) => {
- 
-    let searchTerm = titleInput.value;
+  let searchTerm = titleInput.value;
   event.preventDefault();
   if (searchTerm.includes(" ")) {
     searchTerm = searchTerm.split(" ").join("+");
