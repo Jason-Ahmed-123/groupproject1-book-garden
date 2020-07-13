@@ -18,5 +18,5 @@ https://jason-ahmed-123.github.io/groupproject1-book-garden/
 
 ## Contribution
 
-Made by Sean Sanneman, Lauren Euge, Victor Angel Paniagua Altamirano & Jason Ahmed
+Made by Sean Sanneman, Lauren Euge, Victor Angel Paniagua Altamirano & Jason Ahmed,
 Additional Backend Support - Christopher Martinez
